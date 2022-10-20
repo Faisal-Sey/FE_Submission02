@@ -11,17 +11,141 @@
 .body_section .header_cards {
   display: flex;
   justify-content: space-between;
+  width: 80%;
+  max-width: 480px;
 }
 
 .header_cards .dashboard_card {
   border: 1px solid #BBBBBB;
-  padding: 10px 15px;
+  padding: 10px 5px;
 }
 
 .dashboard_card .card_title {
   font-size: 14px;
+  margin-left: 5px;
 }
 
 .dashboard_card .card_description {
   font-size: 16px;
+  margin-left: 8px;
+}
+
+.revenue_section {
+  margin-top: 50px;
+}
+
+.revenue_section .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.revenue_section .switch_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ccc;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.bestsellers_section {
+  margin-top: 50px;
+}
+
+.bestsellers_section .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bestsellers_section .switch_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.bestsellers_section .table_wrapper th {
+  font-weight: 500;
+}
+
+.bestsellers_section .table_wrapper table {
+  width: 100%;
+  border: 1px solid #B8B8B8;
+  padding: 10px 10px;
+  height: 30vh;
+}
+
+.body_section table th {
+  text-align: left;
+}
+
+/* .body_section table tr {
+  column-span: 2;
+} */
+
+.body_section table td {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1D1F24;
+}
+
+.body_section .table_wrapper #processing {
+  color: #E26478;
+}
+
+.body_section .table_wrapper #delivered {
+  color: #97D554;
 }
