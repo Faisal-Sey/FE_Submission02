@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Orders</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/globals.css"/>
+  <link rel="stylesheet" type="text/css" href="./assets/css/orders.css"/>
+</head>
+
+<body>
+  <main class="main_content">
+    <section class="nav_section">
+      <div class="circles_wrapper">
+        <div class="circle red"></div>
+        <div class="circle yellow"></div>
+        <div class="circle green"></div>
+      </div>
+    </section>
+    <section class="body_section">
+      <div class="nav_links">
+        <div class="img_center">
+          <img 
+            src="../../../assets/img/Freddys_Logo.svg" 
+            width="50%"
+            height="20%"
+          />
+        </div>
+        <div class="links">
+          <ul>
+            <li>
+              <a href="../Dashboard/dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="./orders.html">
+                Orders
+              </a>
+            </li>
+            <li>Logout</li>
+          </ul>
+        </div>
+      </div>
+      <div class="orders_content">
+        <div class="head">
+          <h3>Orders</h3>
+          <div class="search_group">
+            <img 
+              src="./assets/img/search_icon.png" 
+              width="30px"
+              height="30px"
+            />
+            <input type="text"/>
+          </div>
+        </div>
+        <div class="table_wrapper">
+          <table>
+            <tr>
+              <th>Product Name</th>
+              <th>Date</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Item 1</td>
+              <td></td>
+              <td></td>
+              <td id="processing">
+                Processing
+              </td>
+            </tr>
+            <tr>
+              <td>Item 2</td>
+              <td></td>
+              <td></td>
+              <td id="processing">
+                Processing
+              </td>
+            </tr>
+            <tr>
+              <td>Item 3</td>
+              <td></td>
+              <td></td>
+              <td id="processing">
+                Processing
+              </td>
+            </tr>
+            <tr>
+              <td>Item 4</td>
+              <td></td>
+              <td></td>
+              <td id="shipped">
+                Shipped
+              </td>
+            </tr>
+            <tr>
+              <td>Item 5</td>
+              <td></td>
+              <td></td>
+              <td id="shipped">
+                Shipped
+              </td>
+            </tr>
+            <tr>
+              <td>Item 6</td>
+              <td></td>
+              <td></td>
+              <td id="shipped">
+                Shipped
+              </td>
+            </tr>
+            <tr>
+              <td>Item 7</td>
+              <td></td>
+              <td></td>
+              <td id="delivered">
+                Delivered
+              </td>
+            </tr>
+            <tr>
+              <td>Item 8</td>
+              <td></td>
+              <td></td>
+              <td id="delivered">
+                Delivered
+              </td>
+            </tr>
+            <tr>
+              <td>Item 9</td>
+              <td></td>
+              <td></td>
+              <td id="delivered">
+                Delivered
+              </td>
+            </tr>
+            <tr>
+              <td>Item 10</td>
+              <td></td>
+              <td></td>
+              <td id="delivered">
+                Delivered
+              </td>
+            </tr>
+          </table>
+          <div class="table_paginator">
+            <span>Page 1 of 3</span>
+            <span>
+              <img 
+                src="./assets/img/paginator_icon.png" 
+                width="12px"
+                height="12px"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./assets/js/orders.js"></script>
+</body>
+
+</html>
