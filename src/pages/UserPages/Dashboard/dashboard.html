@@ -6,6 +6,9 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../../../assets/css/globals.css"/>
   <link rel="stylesheet" type="text/css" href="./assets/css/dashboard.css"/>
+  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+  <!-- Include fusion theme -->
+  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
 </head>
 
 <body>
@@ -76,13 +79,28 @@
         </div>
         <div class="revenue_section">
           <div class="head">
-            <h3>Revenue (last 7 days)</h3>
+            <h3 id="weekly_chart_header">
+              Revenue (last 7 days)
+            </h3>
+            <h3 id="monthly_chart_header">
+              Revenue (last 12 months)
+            </h3>
             <div class="switch_wrapper">
               <label class="switch">
-                <input type="checkbox">
+                <input 
+                  type="checkbox"
+                  id="change_filter"
+                  onchange="ChangeChartFilter()"
+                >
                 <span class="slider round"></span>
               </label>
             </div>
+          </div>
+          <div id="chart_container_week">
+            Weekly Chart will load here!
+          </div>
+          <div id="chart_container_month">
+            Monthly Chart will load here!
           </div>
         </div>
         <div class="bestsellers_section">
@@ -121,7 +139,7 @@
       </div>
     </section>
   </main>
-  <script src="./assets/js/orders.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
 </body>
 
 </html>

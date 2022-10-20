@@ -31,7 +31,7 @@
 }
 
 .revenue_section {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .revenue_section .head {
@@ -104,7 +104,7 @@ input:checked + .slider:before {
 }
 
 .bestsellers_section {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .bestsellers_section .head {
@@ -148,4 +148,17 @@ input:checked + .slider:before {
 
 .body_section .table_wrapper #delivered {
   color: #97D554;
+}
+
+.chart_div rect {
+  fill: transparent;
+}
+
+g[fill="#b1b2b7"] {
+  display: none;
+}
+
+#monthly_chart_header,
+#chart_container_month {
+  display: none;
 }
