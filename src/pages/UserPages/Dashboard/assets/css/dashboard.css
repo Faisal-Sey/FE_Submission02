@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
-  max-width: 480px;
+  max-width: 540px;
 }
 
 .header_cards .dashboard_card {
@@ -140,6 +140,11 @@ input:checked + .slider:before {
   font-size: 18px;
   font-weight: 700;
   color: #1D1F24;
+}
+
+.bestsellers_section .table_wrapper td:nth-child(3),
+.bestsellers_section .table_wrapper td:nth-child(4) {
+  font-weight: 500;
 }
 
 .body_section .table_wrapper #processing {
