@@ -17,6 +17,7 @@ const login = async() => {
     }
   }).then(async(data) => {
     const res = await data.json()
+    console.log(res)
     localStorage.setItem("access_token", res.access_token)
     localStorage.setItem("refresh_token", res.refresh_token)
     window.location.href = "../UserPages/Dashboard/dashboard.html";
