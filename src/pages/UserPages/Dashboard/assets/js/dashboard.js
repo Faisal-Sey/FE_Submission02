@@ -212,6 +212,4 @@ FusionCharts.ready(async function () {
   fusionchartsMonthly.render();
 });
 
-
-
 document.addEventListener("DOMContentLoaded", loadContents);

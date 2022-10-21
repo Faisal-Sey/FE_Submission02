@@ -53,6 +53,10 @@
   color: #1D1F24;
 }
 
+.body_section table td:nth-child(2) {
+  font-weight: 500;
+}
+
 .body_section .table_wrapper #processing {
   color: #E26478;
 }
@@ -64,4 +68,9 @@
 .body_section .table_paginator {
   margin-top: 10px;
   font-weight: 600;
+  display: flex;
+}
+
+.table_paginator #page_number {
+  margin: 0 5px;
 }

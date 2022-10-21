@@ -48,104 +48,42 @@
               src="./assets/img/search_icon.png" 
               width="30px"
               height="30px"
+              onclick="searchName()"
             />
-            <input type="text"/>
+            <input 
+              type="text"
+              placeholder="Search..."
+              id="search_input"
+            />
           </div>
         </div>
         <div class="table_wrapper">
-          <table>
+          <table id="orders_table">
             <tr>
               <th>Product Name</th>
               <th>Date</th>
               <th>Price</th>
               <th>Status</th>
             </tr>
-            <tr>
-              <td>Item 1</td>
-              <td></td>
-              <td></td>
-              <td id="processing">
-                Processing
-              </td>
-            </tr>
-            <tr>
-              <td>Item 2</td>
-              <td></td>
-              <td></td>
-              <td id="processing">
-                Processing
-              </td>
-            </tr>
-            <tr>
-              <td>Item 3</td>
-              <td></td>
-              <td></td>
-              <td id="processing">
-                Processing
-              </td>
-            </tr>
-            <tr>
-              <td>Item 4</td>
-              <td></td>
-              <td></td>
-              <td id="shipped">
-                Shipped
-              </td>
-            </tr>
-            <tr>
-              <td>Item 5</td>
-              <td></td>
-              <td></td>
-              <td id="shipped">
-                Shipped
-              </td>
-            </tr>
-            <tr>
-              <td>Item 6</td>
-              <td></td>
-              <td></td>
-              <td id="shipped">
-                Shipped
-              </td>
-            </tr>
-            <tr>
-              <td>Item 7</td>
-              <td></td>
-              <td></td>
-              <td id="delivered">
-                Delivered
-              </td>
-            </tr>
-            <tr>
-              <td>Item 8</td>
-              <td></td>
-              <td></td>
-              <td id="delivered">
-                Delivered
-              </td>
-            </tr>
-            <tr>
-              <td>Item 9</td>
-              <td></td>
-              <td></td>
-              <td id="delivered">
-                Delivered
-              </td>
-            </tr>
-            <tr>
-              <td>Item 10</td>
-              <td></td>
-              <td></td>
-              <td id="delivered">
-                Delivered
-              </td>
-            </tr>
           </table>
           <div class="table_paginator">
-            <span>Page 1 of 3</span>
-            <span>
+            <span 
+              id="left_arrow"
+              onclick="getPreviousPage()"
+            >
               <img 
-                src="./assets/img/paginator_icon.png" 
+                src="./assets/img/left-arrow.png" 
+                width="12px"
+                height="12px"
+              />
+            </span>
+            <span id="page_number">Page 1 of 3</span>
+            <span 
+              id="right_arrow"
+              onclick="getNextPage()"
+            >
+              <img 
+                src="./assets/img/right-arrow.png" 
                 width="12px"
                 height="12px"
               />
