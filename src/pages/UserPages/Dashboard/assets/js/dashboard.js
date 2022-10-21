@@ -131,15 +131,20 @@ const requestNewToken = async(token) => {
 }
 
 async function loadContents() {
-  const url = "https://freddy.codesubmit.io/dashboard"
-  const token = localStorage.getItem("access_token")
-  const refreshToken = localStorage.getItem("refresh_token")
-
-  requestNewToken(refreshToken)
-  get(url, token, true).then(async(dataRec) => {
-    const recData = await dataRec.json()
-    updateBestSellers(recData?.dashboard?.bestsellers)
-  }).catch((err) => console.log(err))
+  if (localStorage.getItem("access_token") !== undefined) {
+    const url = "https://freddy.codesubmit.io/dashboard"
+    const token = localStorage.getItem("access_token")
+    const refreshToken = localStorage.getItem("refresh_token")
+  
+    requestNewToken(refreshToken)
+    get(url, token, true).then(async(dataRec) => {
+      const recData = await dataRec.json()
+      updateBestSellers(recData?.dashboard?.bestsellers)
+    }).catch((err) => console.log(err))
+  }
+  else {
+    window.location.href = "../../Auth/login.html";
+  }
 }
 
 
@@ -177,6 +182,11 @@ const returnChartConfig = (filter, data) => {
   };
 }
 
+const logout = () => {
+  localStorage.clear()
+  window.location.href = "../../Auth/login.html";
+}
+
 
 FusionCharts.ready(async function () {
   const url = "https://freddy.codesubmit.io/dashboard"
@@ -208,8 +218,8 @@ FusionCharts.ready(async function () {
   const fusionchartsWeekly = new FusionCharts(returnChartConfig("weekly", weeklyChartData));
   fusionchartsWeekly.render();
 
-  const fusionchartsMonthly = new FusionCharts(returnChartConfig("yearly", yearlyChartData));
-  fusionchartsMonthly.render();
+  const fusionchartsYearly = new FusionCharts(returnChartConfig("yearly", yearlyChartData));
+  fusionchartsYearly.render();
 });
 
 document.addEventListener("DOMContentLoaded", loadContents);

@@ -125,7 +125,7 @@ input:checked + .slider:before {
   width: 100%;
   border: 1px solid #B8B8B8;
   padding: 10px 10px;
-  height: 30vh;
+  height: 30%;
 }
 
 .body_section table th {

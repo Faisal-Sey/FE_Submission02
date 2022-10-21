@@ -36,6 +36,11 @@ const get = async(url, token, auth) => {
   })
 }
 
+const logout = () => {
+  localStorage.clear()
+  window.location.href = "../../Auth/login.html";
+}
+
 const formatDate = (date) => {
   if (date) {
     const newDate = new Date(date);
@@ -134,7 +139,7 @@ const getPreviousPage = () => {
   }
 
   document.querySelector("#page_number").innerText = `Page ${parseInt(currentPage) - 1} of ${pagesNumber}`
-  const url = `https://freddy.codesubmit.io/orders?page=${parseInt(currentPage) + 1}`
+  const url = `https://freddy.codesubmit.io/orders?page=${parseInt(currentPage) - 1}`
   applyChange(url)
 }
 
@@ -153,7 +158,8 @@ const getNextPage = () => {
   }
 
   document.querySelector("#page_number").innerText = `Page ${parseInt(currentPage) + 1} of ${pagesNumber}`
-  applyChange(parseInt(currentPage) + 1)
+  const url = `https://freddy.codesubmit.io/orders?page=${parseInt(currentPage) + 1}`
+  applyChange(url)
 }
 
 const searchName = () => {
