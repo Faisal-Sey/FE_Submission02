@@ -131,7 +131,7 @@ const requestNewToken = async(token) => {
 }
 
 async function loadContents() {
-  if (localStorage.getItem("access_token") !== undefined) {
+  if (localStorage.getItem("access_token") !== "undefined") {
     const url = "https://freddy.codesubmit.io/dashboard"
     const token = localStorage.getItem("access_token")
     const refreshToken = localStorage.getItem("refresh_token")

@@ -174,19 +174,23 @@ const searchName = () => {
 
 
 async function loadContents() {
-  document.querySelector("#left_arrow").style.display = "none";
-  const url = "https://freddy.codesubmit.io/orders?page=1"
-  const token = localStorage.getItem("access_token")
-  const refreshToken = localStorage.getItem("refresh_token")
+  if (localStorage.getItem("access_token") !== "undefined") {
+    document.querySelector("#left_arrow").style.display = "none";
+    const url = "https://freddy.codesubmit.io/orders?page=1"
+    const token = localStorage.getItem("access_token")
+    const refreshToken = localStorage.getItem("refresh_token")
 
-  requestNewToken(refreshToken)
-  get(url, token, true).then(async(dataRec) => {
-    const recData = await dataRec.json()
-    updateOrders(recData?.orders)
-    const pageNumber = document.querySelector("#page_number")
-    const pagesNumber = Math.ceil(recData?.total / recData?.orders?.length)
-    pageNumber.innerHTML = `Page 1 of ${pagesNumber}`
-  }).catch((err) => console.log(err))
+    requestNewToken(refreshToken)
+    get(url, token, true).then(async(dataRec) => {
+      const recData = await dataRec.json()
+      updateOrders(recData?.orders)
+      const pageNumber = document.querySelector("#page_number")
+      const pagesNumber = Math.ceil(recData?.total / recData?.orders?.length)
+      pageNumber.innerHTML = `Page 1 of ${pagesNumber}`
+    }).catch((err) => console.log(err))
+  } else {
+    window.location.href = "../../Auth/login.html"
+  }
 }
 
 document.addEventListener("DOMContentLoaded", loadContents);
