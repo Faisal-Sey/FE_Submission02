@@ -69,3 +69,8 @@
 .no-style input {
   width: 100%;
 }
+
+#error_message {
+  color: red;
+  font-size: 20px;
+}
